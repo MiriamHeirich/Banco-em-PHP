@@ -3,12 +3,15 @@
 require_once 'C:\Users\MiriamHeirich\Desktop\AulaPHP\Banco-em-PHP\src\Conta.php';
 
 $primeiraConta = new Conta();
-$primeiraConta->depositar(100) ;
+var_dump($primeiraConta);
+$primeiraConta->depositar(200) ;
 $primeiraConta->defineCpfTitular('05806812979');
 
 
 //teste
 
 
-echo $primeiraConta->recuperarSaldo();
+echo $primeiraConta->recuperarSaldo().PHP_EOL;
 echo $primeiraConta->recuperarCpfTitular();
+
+
