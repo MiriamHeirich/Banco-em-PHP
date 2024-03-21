@@ -4,7 +4,7 @@ require_once 'C:\Users\MiriamHeirich\Desktop\AulaPHP\Banco-em-PHP\src\Conta.php'
 
 $primeiraConta = new Conta();
 var_dump($primeiraConta);
-$primeiraConta->depositar(200) ;
+$primeiraConta->deposita(200) ;
 $primeiraConta->defineCpfTitular('05806812979');
 
 

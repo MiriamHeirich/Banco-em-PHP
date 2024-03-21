@@ -5,8 +5,8 @@ class Conta
     private $cpfTitular;
     private $nomeTitular;
     private $saldo = 0;
-
-public function __construct(string $cpfTitular, string $nomeTitular)//construtor
+    
+    public function __construct(string $cpfTitular, string $nomeTitular)//construtor
     { 
         $this->saldo=0;
         $this->nomeTitular = $nomeTitular;
@@ -14,17 +14,17 @@ public function __construct(string $cpfTitular, string $nomeTitular)//construtor
     }
 
 
-public function sacar(float $valorASacar): void
+    public function saca(float $valorASacar): void
     {
         if ($valorASacar > $this->saldo) {
             echo "Saldo indisponível";
             return;
         }
-    
+
         $this->saldo -= $valorASacar;
     }
 
-public function depositar(float $valorADepositar): void
+    public function deposita(float $valorADepositar): void
     {
         if ($valorADepositar < 0) {
             echo "Valor precisa ser positivo";
@@ -34,40 +34,39 @@ public function depositar(float $valorADepositar): void
         $this->saldo += $valorADepositar;
     }
 
-public function transferir(float $valorATransferir, Conta $contaDestino): void
+    public function transfere(float $valorATransferir, Conta $contaDestino): void
     {
-        if ($valorATransferir > $this->saldo) {
+        if ($valorATransferir > $this->saldo) 
+        {
             echo "Saldo indisponível";
             return;
-    } 
-
-        $this->sacar($valorATransferir);
-        $contaDestino->depositar($valorATransferir);
+        }
+            $this->sacar($valorATransferir);
+            $contaDestino->depositar($valorATransferir);
     }
 
-public function recuperarSaldo():float//get
+    public function recuperaSaldo(): float
     {
         return $this->saldo;
     }
 
-public function recuperarCpfTitular():string//get
+    public function defineCpfTitular(string $cpf): void
     {
-        return $this-> cpfTitular;
-
+        $this->cpfTitular = $cpf;
     }
-public function recuperarNomeTitular():string//get
-{
-    return $this-> nomeTitular;
-}
 
-public function defineCpfTitular(string $Cpf)//set
-{
-    return $this->cpfTitular = $Cpf;
-}
+    public function recuperaCpfTitular(): string
+    {
+        return $this->cpfTitular;
+    }
 
-public function defineNomeTitular(string $nome)
-{
-    return $this->defineNomeTitular= $nome;
-}
-    
+    public function defineNomeTitular(string $nome): void
+    {
+        $this->nomeTitular = $nome;
+    }
+
+    public function recuperaNomeTitular(): string
+    {
+        return $this->nomeTitular;
+    }
 }
