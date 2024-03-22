@@ -10,8 +10,12 @@ class Conta
     { 
         $this->saldo=0;
         $this->nomeTitular = $nomeTitular;
+        $this-> validaNomeTitular($nomeTitular);
         $this-> $cpfTitular = $cpfTitular;
+        $this-> validaCpfTitular($cpfTitular);
+    
     }
+    
 
 
     public function saca(float $valorASacar): void
@@ -69,4 +73,23 @@ class Conta
     {
         return $this->nomeTitular;
     }
+
+    public function validaCpfTitular($cpfTitular)
+    {
+        if (strlen($cpfTitular )<> 11)
+                {
+                    echo "Tamanho de Cpf Inválido";
+                    exit();
+                }
+    }
+
+    public function validaNomeTitular($nomeTitular)
+    {
+        if (strlen($nomeTitular)<5)
+        {
+            echo "Nome inválido";
+            exit();
+        }
+
+}
 }
