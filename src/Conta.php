@@ -50,20 +50,20 @@ class Conta
         return $this->saldo;
     }
 
-    public function defineCpfTitular(string $cpf): void
-    {
-        $this->cpfTitular = $cpf;
-    }
+    // public function defineCpfTitular(string $cpf): void
+    // {
+    //     $this->cpfTitular = $cpf;
+    // }
 
     public function recuperaCpfTitular(): string
     {
         return $this->cpfTitular;
     }
 
-    public function defineNomeTitular(string $nome): void
-    {
-        $this->nomeTitular = $nome;
-    }
+    // public function defineNomeTitular(string $nome): void
+    // {
+    //     $this->nomeTitular = $nome;
+    // }
 
     public function recuperaNomeTitular(): string
     {
