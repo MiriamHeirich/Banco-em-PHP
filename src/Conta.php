@@ -5,6 +5,7 @@ class Conta
     private $cpfTitular;
     private $nomeTitular;
     private $saldo = 0;
+    private static $numeroDeContas = 0;//atributo estatico da classe
     
     public function __construct(string $cpfTitular, string $nomeTitular)//construtor
     { 
@@ -13,7 +14,7 @@ class Conta
         $this-> validaNomeTitular($nomeTitular);
         $this-> $cpfTitular = $cpfTitular;
         $this-> validaCpfTitular($cpfTitular);
-    
+         self::$numeroDeContas ++;
     }
     
 
@@ -74,7 +75,7 @@ class Conta
         return $this->nomeTitular;
     }
 
-    public function validaCpfTitular($cpfTitular)
+    private function validaCpfTitular($cpfTitular)
     {
         if (strlen($cpfTitular )<> 11)
                 {
@@ -83,13 +84,18 @@ class Conta
                 }
     }
 
-    public function validaNomeTitular($nomeTitular)
+    private function validaNomeTitular($nomeTitular)
     {
         if (strlen($nomeTitular)<5)
         {
             echo "Nome inválido";
             exit();
         }
+    }
+    
+    public static function recuperaNumeroDeContas ():int
+        {
+            return Conta::$numeroDeContas;
+        }
 
-}
 }
