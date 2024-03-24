@@ -1,11 +1,11 @@
 <?php
-
+require 'C:\Users\joaod\OneDrive\Área de Trabalho\AulaPHP\Banco-em-PHP\src\Cpf.php'
 Class Titular
 {
-    private string $cpf;
+    private Cpf $cpf;
     private string $nome;
 
-    public function __construct(string $cpf, string $nome)
+    public function __construct(Cpf $cpf, string $nome)
     {
         $this->cpf = $cpf;
         $this->nome = $nome;
@@ -13,7 +13,7 @@ Class Titular
 
     public function getCpf(): string//getter
     {
-        return $this->cpf;
+        return $this->cpf-> recuperaCpfTitular;
     }
 
     
