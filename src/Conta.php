@@ -11,7 +11,6 @@ class Conta
     { 
         $this->saldo=0;
         $this->titular = $Titular;
-        $this->validaNomeTitular($nome);
         self::$numeroDeContas ++;
     }
     

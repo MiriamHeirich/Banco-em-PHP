@@ -7,8 +7,8 @@ Class Titular
 
     public function __construct(string $cpf, string $nome)
     {
-        $this $cpf->$cpf;
-        $this $nome->$nome;
+        $this->cpf = $cpf;
+        $this->nome = $nome;
     }
 
     public function getCpf(): string//getter
@@ -22,9 +22,9 @@ Class Titular
         return $this->nome;
     }
 
-    private function validaNomeTitular($nomeTitular)
+    private function validaNomeTitular($nome)
     {
-        if (strlen($nomeTitular)<5)
+        if (strlen($nome)<5)
         {
             echo "Nome inválido";
             exit();
