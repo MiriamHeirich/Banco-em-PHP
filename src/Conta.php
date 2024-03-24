@@ -2,22 +2,19 @@
 
 class Conta
 {
-    private $cpfTitular;
-    private $nomeTitular;
+    private $titular;
+
     private $saldo = 0;
     private static $numeroDeContas = 0;//atributo estatico da classe
     
-    public function __construct(string $cpfTitular, string $nomeTitular)//construtor
+    public function __construct(Titular $Titular)//construtor
     { 
         $this->saldo=0;
-        $this->nomeTitular = $nomeTitular;
-        $this-> validaNomeTitular($nomeTitular);
-        $this-> $cpfTitular = $cpfTitular;
-        $this-> validaCpfTitular($cpfTitular);
-         self::$numeroDeContas ++;
+        $this->titular = $Titular;
+        $this->validaNomeTitular($nome);
+        self::$numeroDeContas ++;
     }
     
-
 
     public function saca(float $valorASacar): void
     {
@@ -28,7 +25,6 @@ class Conta
 
         $this->saldo -= $valorASacar;
     }
-
     public function deposita(float $valorADepositar): void
     {
         if ($valorADepositar < 0) {
@@ -50,31 +46,6 @@ class Conta
             $contaDestino->depositar($valorATransferir);
     }
 
-    public function recuperaSaldo(): float
-    {
-        return $this->saldo;
-    }
-
-    // public function defineCpfTitular(string $cpf): void
-    // {
-    //     $this->cpfTitular = $cpf;
-    // }
-
-    public function recuperaCpfTitular(): string
-    {
-        return $this->cpfTitular;
-    }
-
-    // public function defineNomeTitular(string $nome): void
-    // {
-    //     $this->nomeTitular = $nome;
-    // }
-
-    public function recuperaNomeTitular(): string
-    {
-        return $this->nomeTitular;
-    }
-
     private function validaCpfTitular($cpfTitular)
     {
         if (strlen($cpfTitular )<> 11)
@@ -83,19 +54,19 @@ class Conta
                     exit();
                 }
     }
-
-    private function validaNomeTitular($nomeTitular)
-    {
-        if (strlen($nomeTitular)<5)
-        {
-            echo "Nome inválido";
-            exit();
-        }
-    }
-    
-    public static function recuperaNumeroDeContas ():int
+     public static function recuperaNumeroDeContas ():int
         {
             return Conta::$numeroDeContas;
         }
+
+    public function recuperaCpfTitular(string $cpf)
+    {
+        return $this->titular->getCpf();
+    }
+
+    public function recuperaNomeTitular(string $cpf)
+    {
+        return $this->titular->getNome();
+    }
 
 }
