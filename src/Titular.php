@@ -1,5 +1,7 @@
 <?php
-require 'C:\Users\MiriamHeirich\Desktop\AulaPHP\Banco-em-PHP\src\Cpf.php';
+require_once 'C:\Users\MiriamHeirich\Desktop\AulaPHP\Banco-em-PHP\src\Cpf.php';
+require_once 'C:\Users\MiriamHeirich\Desktop\AulaPHP\Banco-em-PHP\src\Endereco.php';
+
 Class Titular
 {
     private Cpf $cpf;
@@ -31,5 +33,9 @@ Class Titular
         }
     }
     
+    public function getEnderecoTitular()
+    {
+        
+    }
 
 }
