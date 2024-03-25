@@ -4,13 +4,23 @@ require_once 'C:\Users\MiriamHeirich\Desktop\AulaPHP\Banco-em-PHP\src\Conta.php'
 require_once 'C:\Users\MiriamHeirich\Desktop\AulaPHP\Banco-em-PHP\src\Titular.php';
 require_once 'C:\Users\MiriamHeirich\Desktop\AulaPHP\Banco-em-PHP\src\Cpf.php';
 
-$primeiraConta = new Conta(new Titular (new Cpf ('058.093.333-33')),'Matewyewym',400);
-$primeiraConta->deposita(200) ;
-$segundaConta = new Conta(new Titular(new Cpf('222.328.888-88')),'Miarcia',100);
+$vinicius = new Titular(new CPF('123.456.789-10'), 'Vinicius Dias');
+$primeiraConta = new Conta($vinicius);
+$primeiraConta->deposita(500);
+$primeiraConta->saca(300); // isso é ok
 
+echo $primeiraConta->recuperaNomeTitular() . PHP_EOL;
+echo $primeiraConta->recuperaCpfTitular() . PHP_EOL;
+echo $primeiraConta->recuperaSaldo() . PHP_EOL;
+
+$patricia = new Titular(new CPF('698.549.548-10'), 'Patricia');
+$segundaConta = new Conta($patricia);
 var_dump($segundaConta);
 
-var_dump($primeiraConta);
+$outra = new Conta(new Titular(new CPF('123.654.789-01'), 'Abcdefg'));
+unset($segundaConta);
+echo Conta::recuperaNumeroDeContas();
+
 
 
 
