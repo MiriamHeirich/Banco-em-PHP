@@ -29,4 +29,11 @@ class Titular
             exit();
         }
     }
+
+    public function getEndereco(): string
+    {
+        return $this->endereco;
+    }
+
 }
+
