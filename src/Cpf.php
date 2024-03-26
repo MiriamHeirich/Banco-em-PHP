@@ -3,7 +3,7 @@
 class CPF
 {
     private $numero;
-
+    //teste
     public function __construct(string $numero)
     {
         $numero = filter_var($numero, FILTER_VALIDATE_REGEXP, [
