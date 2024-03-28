@@ -1,6 +1,6 @@
 <?php
 
-class Titular
+class Titular extends Pessoa
 {
     private $cpf;
     private $nome;
