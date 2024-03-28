@@ -5,6 +5,7 @@ class Funcionario
    private string $cpf;
    private string $cargo;
 
+199948230149412
 
     public function setCargo(string $cargo): self
     {
