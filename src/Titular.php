@@ -1,4 +1,5 @@
 <?php
+require_once'C:\Users\MiriamHeirich\Desktop\AulaPHP\Banco-em-PHP\Pessoa.php';
 
 class Titular extends Pessoa
 {
@@ -30,10 +31,7 @@ class Titular extends Pessoa
         }
     }
 
-    public function getEndereco(): string
-    {
-        return $this->endereco;
-    }
+
 
 }
 
