@@ -1,5 +1,5 @@
 <?php
-namespace Modelo;
+namespace Modelo\Conta;
 require_once'C:\Users\MiriamHeirich\Desktop\AulaPHP\Banco-em-PHP\Pessoa.php';
 
 class Titular extends Pessoa

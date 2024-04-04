@@ -1,5 +1,5 @@
 <?php
-namespace Modelo;
+namespace Alura\banco\Modelo;
 class Pessoa
 {
     private $cpf;
