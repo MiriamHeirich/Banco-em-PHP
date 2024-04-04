@@ -1,5 +1,5 @@
 <?php
-
+namespace Modelo;
 class Pessoa
 {
     private $cpf;
