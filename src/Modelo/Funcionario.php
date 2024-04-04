@@ -1,6 +1,6 @@
 <?php
 
-namespace Modelo;
+ namespace Alura\banco\Modelo;
 class Funcionario
 {
    private string $nome;

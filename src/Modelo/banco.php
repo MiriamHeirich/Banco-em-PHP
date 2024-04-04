@@ -1,9 +1,9 @@
 <?php
-namespace Modelo;
-require_once 'C:\Users\MiriamHeirich\Desktop\AulaPHP\Banco-em-PHP\src\Conta.php';
-require_once 'C:\Users\MiriamHeirich\Desktop\AulaPHP\Banco-em-PHP\src\Titular.php';
-require_once 'C:\Users\MiriamHeirich\Desktop\AulaPHP\Banco-em-PHP\src\Cpf.php';
-require_once 'C:\Users\MiriamHeirich\Desktop\AulaPHP\Banco-em-PHP\src\Endereco.php';
+namespace Alura\banco\Modelo;
+require_once 'C:\Users\MiriamHeirich\Desktop\AulaPHP\Banco-em-PHP\Banco-em-PHP\src\Modelo\Conta\Conta.php';
+require_once 'C:\Users\MiriamHeirich\Desktop\AulaPHP\Banco-em-PHP\Banco-em-PHP\src\Modelo\Conta\Titular.php';
+require_once 'C:\Users\MiriamHeirich\Desktop\AulaPHP\Banco-em-PHP\src\Modelo\Cpf.php';
+require_once 'C:\Users\MiriamHeirich\Desktop\AulaPHP\Banco-em-PHP\src\Modelo\Endereco.php';
 
 $vinicius = new Titular(new CPF('123.456.789-10'), 'Vinicius Dias');
 $endereco = new Endereco('Imbituva','Morro das Pedras', 'rua A', '60');

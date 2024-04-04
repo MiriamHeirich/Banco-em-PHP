@@ -1,6 +1,6 @@
 <?php
-namespace Modelo\Conta;
-require_once'C:\Users\MiriamHeirich\Desktop\AulaPHP\Banco-em-PHP\Pessoa.php';
+namespace Alura\banco\Modelo\Conta;
+
 
 class Titular extends Pessoa
 {
