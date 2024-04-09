@@ -1,9 +1,19 @@
 <?php
 namespace Alura\banco\Modelo;
-require_once 'C:\Users\MiriamHeirich\Desktop\AulaPHP\Banco-em-PHP\Banco-em-PHP\src\Modelo\Conta\Conta.php';
-require_once 'C:\Users\MiriamHeirich\Desktop\AulaPHP\Banco-em-PHP\Banco-em-PHP\src\Modelo\Conta\Titular.php';
-require_once 'C:\Users\MiriamHeirich\Desktop\AulaPHP\Banco-em-PHP\src\Modelo\Cpf.php';
-require_once 'C:\Users\MiriamHeirich\Desktop\AulaPHP\Banco-em-PHP\src\Modelo\Endereco.php';
+spl_autoload_register(function (string $nomeCompletoDaClasse){
+   $caminhoArquivo = str_replace('Alura\\Banco', 'src', $nomeCompletoDaClasse);
+   $caminhoArquivo = str_replace('\\', DIRECTORY_SEPARATOR, $caminhoArquivo);
+   $caminhoArquivo .= '.php';
+
+   if(file_exists($caminhoArquivo)) {
+       require_once $caminhoArquivo;
+   }
+});
+
+use Alura\banco\Modelo\Conta\Titular;
+use Alura\banco\Modelo\Endereco;
+use Alura\banco\Modelo\CPF;
+use Alura\banco\Modelo\Conta\Conta;
 
 $vinicius = new Titular(new CPF('123.456.789-10'), 'Vinicius Dias');
 $endereco = new Endereco('Imbituva','Morro das Pedras', 'rua A', '60');
@@ -16,7 +26,7 @@ echo $primeiraConta->recuperaCpfTitular() . PHP_EOL;
 echo $primeiraConta->recuperaSaldo() . PHP_EOL;
 
 
-$patricia = new Titular(new CPF('698.549.548-10'), 'Patricia', $endereco);
+$patricia = new Titular(new CPF('698.549.548-10'), 'Patricia');
 $segundaConta = new Conta($patricia);
 var_dump($segundaConta);
 
