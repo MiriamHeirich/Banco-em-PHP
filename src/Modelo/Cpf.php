@@ -1,9 +1,11 @@
 <?php
-namespace Alura\banco\Modelo;
-class CPF
+
+namespace Alura\Banco\Modelo;
+
+class Cpf
 {
     private $numero;
-    //teste
+
     public function __construct(string $numero)
     {
         $numero = filter_var($numero, FILTER_VALIDATE_REGEXP, [

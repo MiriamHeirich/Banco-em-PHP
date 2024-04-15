@@ -1,46 +1,25 @@
 <?php
 
- namespace Alura\banco\Modelo;
-class Funcionario
+namespace Alura\Banco\Modelo;
+
+class Funcionario extends Pessoa
 {
-   private string $nome;
-   private string $cpf;
-   private string $cargo;
+    private $cargo;
 
-
-    public function setCargo(string $cargo): self
+    public function __construct(string $nome, CPF $cpf, string $cargo)
     {
+        parent::__construct($nome, $cpf);
         $this->cargo = $cargo;
-
-        return $this;
     }
 
-    public function setCpf(string $cpf): self
-    {
-        $this->cpf = $cpf;
-
-        return $this;
-    }
-
-    public function setNome(string $nome): self
-    {
-        $this->nome = $nome;
-
-        return $this;
-    }
-
-    public function getNome(): string
-    {
-        return $this->nome;
-    }
-
-    public function getCpf(): string
-    {
-        return $this->cpf;
-    }
-
-    public function getCargo(): string
+    public function recuperaCargo(): string
     {
         return $this->cargo;
+    }
+
+    public function alteraNome(string $nome): void
+    {
+        $this->validaNomeTitular($nome);
+        $this->nome = $nome;
     }
 }
