@@ -21,7 +21,7 @@ class Conta
         self::$numeroDeContas--;
     }
 
-    public function saca(float $valorASacar): void
+    public function sacar(float $valorASacar): void
     {
         if ($valorASacar > $this->saldo) {
             echo "Saldo indisponível";
@@ -31,7 +31,7 @@ class Conta
         $this->saldo -= $valorASacar;
     }
 
-    public function deposita(float $valorADepositar): void
+    public function depositar(float $valorADepositar): void
     {
         if ($valorADepositar < 0) {
             echo "Valor precisa ser positivo";
