@@ -24,7 +24,8 @@ class Conta
     public function sacar(float $valorASacar): void
     {
         $tarifadeSaque = $valorASacar * 0.05;
-        $valorSaque = $valorASacar * $tarifadeSaque;
+        $valorSaque = $valorASacar + $tarifadeSaque;
+        
         if ($valorSaque > $this->saldo) {
             echo "Saldo indisponível";
             return;
